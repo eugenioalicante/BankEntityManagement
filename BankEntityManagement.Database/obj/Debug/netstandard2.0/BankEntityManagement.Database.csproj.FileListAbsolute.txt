@@ -6,3 +6,4 @@ C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManag
 C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\bin\Debug\netstandard2.0\BankEntityManagement.Database.pdb
 C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\obj\Debug\netstandard2.0\BankEntityManagement.Database.dll
 C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\obj\Debug\netstandard2.0\BankEntityManagement.Database.pdb
+C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\obj\Debug\netstandard2.0\BankEntityManagement.Database.csprojAssemblyReference.cache

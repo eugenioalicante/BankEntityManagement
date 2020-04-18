@@ -1,0 +1,7 @@
+Scaffold-DbContext Command:
+
+Scaffold-DbContext "Server=bank-entity-management.database.windows.net;Initial Catalog=BankEntityManagement;User ID=bankEntityManagement;Password=abt32o1r$" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -DataAnnotations
+
+https://www.entityframeworktutorial.net/efcore/create-model-for-existing-database-in-ef-core.aspx
+
+---------------------------------------------------------------------------------------------------------------------
