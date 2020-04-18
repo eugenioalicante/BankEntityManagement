@@ -1,5 +1,8 @@
-﻿using BackEntityManagement.Repository.Interface;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using BackEntityManagement.Repository.Interface;
 using BankEntityManagement.Database.Entities;
+using BankEntityManagement.Service.Dto;
 using BankEntityManagement.Service.Interface;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -10,15 +13,20 @@ namespace BankEntityManagement.Service.Service
     public class EntityService : IEntityService
     {
         private readonly IEntityRepository _entityRepository;
+        private readonly IMapper _mapper;
 
-        public EntityService(IEntityRepository entityRepository)
+        public EntityService(IEntityRepository entityRepository,
+                             IMapper mapper)
         {
             _entityRepository = entityRepository;
+            _mapper = mapper;
         }
 
-        public async Task<List<Entity>> GetAll()
+        public async Task<List<DtoEntity>> GetAll()
         {
-            return await _entityRepository.GetAll().ToListAsync();
+            return await _entityRepository.GetAll().
+                                ProjectTo<DtoEntity>(_mapper.ConfigurationProvider)
+                                    .ToListAsync();
         }
     }
 }
