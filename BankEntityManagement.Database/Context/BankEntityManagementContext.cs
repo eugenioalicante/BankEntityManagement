@@ -1,8 +1,8 @@
 ﻿using System;
+using BankEntityManagement.Database.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BankEntityManagement.Database.Entities
+namespace BankEntityManagement.Database.Context
 {
     public partial class BankEntityManagementContext : DbContext
     {
