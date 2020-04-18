@@ -24,38 +24,8 @@ namespace BankEntityManagement.Database.Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=bank-entity-management.database.windows.net;Initial Catalog=BankEntityManagement;User ID=bankEntityManagement;Password=abt32o1r$");
+                optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("BBDD").ToString());
             }
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
-
-            modelBuilder.Entity<Entity>(entity =>
-            {
-                entity.HasOne(d => d.IdEntityGroupNavigation)
-                    .WithMany(p => p.Entity)
-                    .HasForeignKey(d => d.IdEntityGroup)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Entity_EntityGroup");
-
-                entity.HasOne(d => d.IdProvinceNavigation)
-                    .WithMany(p => p.Entity)
-                    .HasForeignKey(d => d.IdProvince)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Entity_Province");
-            });
-
-            modelBuilder.Entity<Province>(entity =>
-            {
-                entity.HasOne(d => d.IdCountryNavigation)
-                    .WithMany(p => p.Province)
-                    .HasForeignKey(d => d.IdCountry)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Provinces_Countries");
-            });
-        }
+        }        
     }
 }
