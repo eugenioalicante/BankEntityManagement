@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using BackEntityManagement.Infrastructure.Startup;
 using AutoMapper;
 using BankEntityManagement.Service.Dto;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace ApiGeteway
 {
@@ -21,6 +24,19 @@ namespace ApiGeteway
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+              {
+                  options.TokenValidationParameters = new TokenValidationParameters()
+                  {
+                      RequireExpirationTime = false,
+                      ValidateAudience = false,
+                      ValidateIssuer = false,
+                      IssuerSigningKey = new SymmetricSecurityKey(
+                           Encoding.UTF8.GetBytes("b8d42785-8875-40fd-b8d6-6906c749d0bb")
+                       )
+                  };
+              });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddAutoMapper(typeof(DtoMappingProfile));
@@ -48,7 +64,10 @@ namespace ApiGeteway
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
+
             app.UseMvc();
-        }
+        }        
     }
 }

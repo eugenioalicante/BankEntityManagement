@@ -8,6 +8,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 
+
 namespace BackEntityManagement.Infrastructure.Startup
 {
     public static class ConfigureServiceExtensions
@@ -36,7 +37,7 @@ namespace BackEntityManagement.Infrastructure.Startup
                 c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
                 {
                     { "Bearer", new string[] { } }
-                });                
+                });
 
                 c.DescribeAllEnumsAsStrings();
             });
@@ -48,7 +49,7 @@ namespace BackEntityManagement.Infrastructure.Startup
             services.AddScoped<IEntityService, EntityService>();
 
             // Register repository                     
-            services.AddScoped<IEntityRepository, EntityRepository>();            
+            services.AddScoped<IEntityRepository, EntityRepository>();
         }
 
         public static void AddDbContext(this IServiceCollection services, IConfiguration configuration)
