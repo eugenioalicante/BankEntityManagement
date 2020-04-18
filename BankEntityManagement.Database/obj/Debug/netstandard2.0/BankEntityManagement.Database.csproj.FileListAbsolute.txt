@@ -1,9 +1,0 @@
-C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\bin\Debug\netstandard2.0\BankEntityManagement.Database.deps.json
-C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\bin\Debug\netstandard2.0\BankEntityManagement.Database.dll
-C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\obj\Debug\netstandard2.0\BankEntityManagement.Database.csproj.CoreCompileInputs.cache
-C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\obj\Debug\netstandard2.0\BankEntityManagement.Database.AssemblyInfoInputs.cache
-C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\obj\Debug\netstandard2.0\BankEntityManagement.Database.AssemblyInfo.cs
-C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\bin\Debug\netstandard2.0\BankEntityManagement.Database.pdb
-C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\obj\Debug\netstandard2.0\BankEntityManagement.Database.dll
-C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\obj\Debug\netstandard2.0\BankEntityManagement.Database.pdb
-C:\Users\emalfeito\Desktop\PRUEBA_NECOMPLUS\BankEntityManagement\BankEntityManagement.Database\obj\Debug\netstandard2.0\BankEntityManagement.Database.csprojAssemblyReference.cache
