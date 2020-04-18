@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BackEntityManagement.Infrastructure\BackEntityManagement.Infrastructure.csproj" />
     <ProjectReference Include="..\BankEntityManagement.Service\BankEntityManagement.Service.csproj" />
   </ItemGroup>
 
