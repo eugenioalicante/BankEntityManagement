@@ -14,6 +14,8 @@ namespace BankEntityManagement.Service.Dto
                 ForMember(dest => dest.EntityGroup, opt => opt.MapFrom(src => src.IdEntityGroupNavigation));
 
             CreateMap<EntityGroup, DtoEntityGroup>();
+
+            CreateMap<DtoEntityAdd, Entity>();            
         }
     }
 }

@@ -6,16 +6,16 @@ using System.Linq;
 
 namespace BackEntityManagement.Repository.Repository
 {   
-    public class EntityRepository : IEntityRepository
+    public class EntityRepository : GenericRepository<Entity> , IEntityRepository
     {       
         private readonly BankEntityManagementContext _context;
 
         /// <summary>
         /// 
         /// </summary>
-        public EntityRepository(BankEntityManagementContext context)
+        public EntityRepository(BankEntityManagementContext context) : base(context)
         {
-            _context = context;
+            
         }
 
         public IQueryable<Entity> GetAll()
@@ -25,6 +25,6 @@ namespace BackEntityManagement.Repository.Repository
                         Include(i => i.IdProvinceNavigation).
                             ThenInclude(t => t.IdCountryNavigation).
                     AsNoTracking();
-        }
+        }       
     }
 }

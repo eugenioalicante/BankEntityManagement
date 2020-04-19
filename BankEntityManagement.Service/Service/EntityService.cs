@@ -28,5 +28,16 @@ namespace BankEntityManagement.Service.Service
                                 ProjectTo<DtoEntity>(_mapper.ConfigurationProvider)
                                     .ToListAsync();
         }
+
+        public async Task<Entity> Add(DtoEntityAdd dtoEntity)
+        {
+            Entity entity = _mapper.Map<Entity>(dtoEntity);
+
+            _entityRepository.CreateGeneric(entity);
+
+            await _entityRepository.SaveChangesAsync();
+
+            return entity;
+        }
     }
 }

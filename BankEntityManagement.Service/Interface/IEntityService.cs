@@ -8,5 +8,6 @@ namespace BankEntityManagement.Service.Interface
     public interface IEntityService
     {
         Task<List<DtoEntity>> GetAll();
+        Task<Entity> Add(DtoEntityAdd entity);
     }
 }
