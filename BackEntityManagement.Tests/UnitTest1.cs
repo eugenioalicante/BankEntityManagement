@@ -96,6 +96,47 @@ namespace BackEntityManagement.Tests
             }
         }
 
+        [Theory]
+        [InlineData(3, 4, "Entidad 3", 1, 1, "Alicante", "03009", "965858523", "prueba@gmail.com", "", true)]
+        public async Task Add(int numberElements, int id, string name, int IdEntityGroup, int idProvince, string city, string postalCode, string telephone, string email, string logo, bool active)
+        {
+            DbContextOptions<BankEntityManagementContext> options = SqliteInMemory.CreateOptions<BankEntityManagementContext>();
+
+            using (var context = new BankEntityManagementContext(options))
+            {
+                List<Country> country = GetCountry(numberElements);
+                List<Province> Province = GetProvince(numberElements);
+                List<EntityGroup> EntityGroup = GetEntityGroup(numberElements);
+                List<Entity> entity = GetEntity(numberElements);
+
+                await ContextConfig.InitializeDatabaseContextSeed(context);
+
+                await ContextConfig.AddDatabaseContext(context, country);
+                await ContextConfig.AddDatabaseContext(context, Province);
+                await ContextConfig.AddDatabaseContext(context, EntityGroup);
+                await ContextConfig.AddDatabaseContext(context, entity);
+
+                IEntityService entityService = InjectEvaluationTsrService(context);
+
+                DtoEntityAdd entityAdd = new DtoEntityAdd
+                {
+                    Name = name,
+                    IdEntityGroup = IdEntityGroup,
+                    IdProvince = idProvince,
+                    City = city,
+                    PostalCode = postalCode,
+                    Telephone = telephone,
+                    Email = email,
+                    Logo = logo,
+                    Active = active
+                };
+
+                Entity entityResult = await entityService.Add(entityAdd);
+
+                entityResult.Id.Should().Be(id);
+            }
+        }
+
         private List<Entity> GetEntity(int elements)
         {
             List<Entity> result = Builder<Entity>.CreateListOfSize(elements)
