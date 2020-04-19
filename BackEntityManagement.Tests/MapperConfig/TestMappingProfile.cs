@@ -5,11 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BackEntityManagement.Tests
+namespace BackEntityManagement.MapperConfig.Tests
 {
-    public class TestTsrAutoMapperProfile : Profile
+    public class TestMappingProfile : Profile
     {
-        public TestTsrAutoMapperProfile()
+        public TestMappingProfile()
         {
             CreateMap<Entity, DtoEntity>().
                ForMember(dest => dest.Province, opt => opt.MapFrom(src => src.IdProvinceNavigation.Name)).
