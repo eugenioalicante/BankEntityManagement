@@ -7,9 +7,7 @@ using System.Linq;
 namespace BackEntityManagement.Repository.Repository
 {   
     public class EntityRepository : GenericRepository<Entity> , IEntityRepository
-    {       
-        private readonly BankEntityManagementContext _context;
-
+    {              
         /// <summary>
         /// 
         /// </summary>

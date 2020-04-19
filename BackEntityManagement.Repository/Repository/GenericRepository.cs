@@ -9,7 +9,7 @@ namespace BackEntityManagement.Repository.Repository
 {
     public abstract class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        private readonly BankEntityManagementContext _context;
+        protected BankEntityManagementContext _context;
 
         /// <summary>
         /// 
