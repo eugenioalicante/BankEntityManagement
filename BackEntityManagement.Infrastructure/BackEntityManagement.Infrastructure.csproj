@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BackEntityManagement.Helpers\BackEntityManagement.Helpers.csproj" />
     <ProjectReference Include="..\BankEntityManagement.Service\BankEntityManagement.Service.csproj" />
   </ItemGroup>
 

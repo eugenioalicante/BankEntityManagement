@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using BackEntityManagement.Infrastructure.Exceptions;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace BackEntityManagement.Infrastructure.Exceptions
+namespace BackEntityManagement.Infrastructure.Middleware
 {
     public class ErrorHandlingMiddleware
     {

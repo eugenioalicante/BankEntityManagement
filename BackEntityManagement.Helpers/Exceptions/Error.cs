@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 
-namespace BackEntityManagement.Infrastructure.Exceptions
+namespace BackEntityManagement.Helpers.Exceptions
 {
     public class Error
     {       
