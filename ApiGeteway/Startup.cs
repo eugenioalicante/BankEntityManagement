@@ -11,6 +11,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using BackEntityManagement.Infrastructure.Middleware;
 
+[assembly: ApiController]
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 namespace ApiGeteway
 {
     public class Startup

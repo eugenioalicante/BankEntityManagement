@@ -9,10 +9,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiGeteway.Controllers
-{
-    [Route("api/[controller]")]
-    [ApiController]
-    //[Authorize]
+{    
+    [Authorize]
     public class EntityController : GenericController
     {
         private readonly IEntityService _entityService;
@@ -22,30 +20,20 @@ namespace ApiGeteway.Controllers
             _entityService = entityService;
         }
 
-        [HttpGet]
-        [ProducesResponseType(typeof(DtoEntity), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]        
+        [HttpGet]          
         public async Task<IActionResult> Get()
         {
             return Ok(await _entityService.GetAll());
         }
         
         [HttpGet]
-        [Route("{id:int}")]
-        [ProducesResponseType(typeof(Entity), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Route("{id:int}")]       
         public async Task<IActionResult> GetById(int id)
         {
             return Ok(await _entityService.FindAsync(id));
         }
 
-        [HttpPost]
-        [ProducesResponseType(typeof(Entity), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [HttpPost]       
         public async Task<IActionResult> Add(DtoEntityAdd dtoEntity)
         {
             return Ok(await _entityService.Add(dtoEntity));
