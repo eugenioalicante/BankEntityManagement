@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BackEntityManagement.Helpers\BackEntityManagement.Helpers.csproj" />
     <ProjectReference Include="..\BackEntityManagement.Repository\BackEntityManagement.Repository.csproj" />
   </ItemGroup>
 

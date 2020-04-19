@@ -9,5 +9,6 @@ namespace BankEntityManagement.Service.Interface
     {
         Task<List<DtoEntity>> GetAll();
         Task<Entity> Add(DtoEntityAdd entity);
+        Task<Entity> FindAsync(int id);
     }
 }

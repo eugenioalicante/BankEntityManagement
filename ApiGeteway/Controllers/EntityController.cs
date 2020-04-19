@@ -16,13 +16,10 @@ namespace ApiGeteway.Controllers
     public class EntityController : GenericController
     {
         private readonly IEntityService _entityService;
-        private readonly IEntityRepository _entityRepository;
 
-        public EntityController(IEntityService entityService,
-                                IEntityRepository entityRepository)
+        public EntityController(IEntityService entityService)
         {
             _entityService = entityService;
-            _entityRepository = entityRepository;
         }
 
         [HttpGet]
@@ -42,7 +39,7 @@ namespace ApiGeteway.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetById(int id)
         {
-            return Ok(await _entityRepository.FindAsync(id));
+            return Ok(await _entityService.FindAsync(id));
         }
 
         [HttpPost]

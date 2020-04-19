@@ -9,6 +9,7 @@ using BankEntityManagement.Service.Dto;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using BackEntityManagement.Infrastructure.Exceptions;
 
 namespace ApiGeteway
 {
@@ -66,6 +67,8 @@ namespace ApiGeteway
             app.UseHttpsRedirection();
 
             app.UseAuthentication();
+
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
             app.UseMvc();
         }        
