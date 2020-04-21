@@ -5,12 +5,16 @@ using System.Text;
 
 namespace BackEntityManagement.Helpers.Exceptions
 {
-    public class Error
-    {       
-        public int Id { get; set; }
-     
-        public string Descripcion { get; set; }
+    public class ErrorProblemDetails
+    {                     
+        public string Title { get; set; }        
+        public int Status { get; set; }        
+        public string TraceId { get; set; }        
+        public Errors Errors { get; set; }
+    }
 
-        public HttpStatusCode RespuestaHTTP { get; set; }
+    public class Errors
+    {        
+        public string[] resultError { get; set; }
     }
 }

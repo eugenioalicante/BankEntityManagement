@@ -20,11 +20,12 @@ namespace BackEntityManagement.Infrastructure.Exceptions
                 StatusCode = baseException.StatusCode;
             }
 
-            Error error = new Error()
+            ErrorProblemDetails error = new ErrorProblemDetails()
             {
-                RespuestaHTTP = StatusCode,
-                Id = (int)StatusCode,
-                Descripcion = message
+                Status = (int)StatusCode,
+                Title = message,
+                Errors = new Errors { resultError = new string[] { exception.Message } },
+                TraceId = Guid.NewGuid().ToString()
             };
 
             string serializedResponse = JsonConvert.SerializeObject(error);
