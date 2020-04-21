@@ -22,7 +22,7 @@ namespace BackEntityManagement.Tests.TestEntity
 
         private static List<Entity> GetEntity(int elements)
         {
-            return Builder<Entity>.CreateListOfSize(elements).Build() as List<Entity>;            
+            return Builder<Entity>.CreateListOfSize(elements).All().With(w => w.Active = true).Build() as List<Entity>;
         }
 
         private static List<Country> GetCountry(int elements)

@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiGeteway.Controllers
 {    
-    [Authorize]
+    //[Authorize]
     public class EntityController : GenericController
     {
         private readonly IEntityService _entityService;
