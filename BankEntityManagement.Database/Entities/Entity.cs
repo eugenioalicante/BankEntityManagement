@@ -25,7 +25,10 @@ namespace BankEntityManagement.Database.Entities
         public string Email { get; set; }
         [StringLength(50)]
         public string Logo { get; set; }
-        public bool Active { get; set; }
+        [Required]
+        public bool? Active { get; set; }
+        [StringLength(50)]
+        public string Adress { get; set; }
 
         [ForeignKey("IdEntityGroup")]
         [InverseProperty("Entity")]

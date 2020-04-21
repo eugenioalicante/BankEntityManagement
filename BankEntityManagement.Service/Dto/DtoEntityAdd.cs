@@ -16,6 +16,8 @@ namespace BankEntityManagement.Service.Dto
         public string City { get; set; }
         [MaxLength(5)]
         public string PostalCode { get; set; }
+        [MaxLength(50)]
+        public string Adress { get; set; }
         [Required]
         [MaxLength(11)]
         public string Telephone { get; set; }
@@ -23,7 +25,6 @@ namespace BankEntityManagement.Service.Dto
         [MaxLength(50)]
         public string Email { get; set; }
         [MaxLength(50)]
-        public string Logo { get; set; }
-        public bool Active { get; set; }
+        public string Logo { get; set; }       
     }
 }

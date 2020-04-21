@@ -30,10 +30,12 @@ namespace BankEntityManagement.Database.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
+            modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");            
 
             modelBuilder.Entity<Entity>(entity =>
             {
+                entity.Property(e => e.Active).HasDefaultValueSql("((1))");
+
                 entity.HasOne(d => d.IdEntityGroupNavigation)
                     .WithMany(p => p.Entity)
                     .HasForeignKey(d => d.IdEntityGroup)
@@ -56,7 +58,7 @@ namespace BankEntityManagement.Database.Context
                     .HasConstraintName("FK_Provinces_Countries");
             });
 
-            modelBuilder.Entity<Entity>().HasQueryFilter(e => e.Active);
+            modelBuilder.Entity<Entity>().HasQueryFilter(e => e.Active == true);
         }
     }
 }

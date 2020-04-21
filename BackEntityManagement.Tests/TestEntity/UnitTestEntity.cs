@@ -95,8 +95,7 @@ namespace BackEntityManagement.Tests.TestEntity
                     PostalCode = postalCode,
                     Telephone = telephone,
                     Email = email,
-                    Logo = logo,
-                    Active = active
+                    Logo = logo
                 };
 
                 Entity entityResult = await entityService.Add(entityAdd);
