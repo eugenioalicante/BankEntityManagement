@@ -23,7 +23,7 @@ namespace BankEntityManagement.Database.Entities
         [Required]
         [StringLength(50)]
         public string Email { get; set; }
-        [StringLength(50)]
+        [StringLength(300)]
         public string Logo { get; set; }
         [Required]
         public bool? Active { get; set; }

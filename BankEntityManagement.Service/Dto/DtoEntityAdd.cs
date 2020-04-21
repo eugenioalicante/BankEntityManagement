@@ -24,7 +24,7 @@ namespace BankEntityManagement.Service.Dto
         [Required]
         [MaxLength(50)]
         public string Email { get; set; }
-        [MaxLength(50)]
+        [MaxLength(300)]
         public string Logo { get; set; }       
     }
 }
