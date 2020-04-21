@@ -11,7 +11,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "BBDD": "Server=bank-entity-management.database.windows.net;Initial Catalog=bankEntityManagement;User ID=bankEntityManagement;Password=abt32o1r$",
         "ASPNETCORE_ENVIRONMENT": "Development"
