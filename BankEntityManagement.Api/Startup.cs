@@ -16,13 +16,13 @@ using BackEntityManagement.Infrastructure.Middleware;
 namespace ApiGeteway
 {
     public class Startup
-    {        
+    {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-        }
-
-        public IConfiguration Configuration { get; }
+        }        
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -45,7 +45,7 @@ namespace ApiGeteway
                       ValidateAudience = false,
                       ValidateIssuer = false,
                       IssuerSigningKey = new SymmetricSecurityKey(
-                           Encoding.UTF8.GetBytes("b8d42785-8875-40fd-b8d6-6906c749d0bb")
+                           Encoding.UTF8.GetBytes(Configuration.GetSection("KeySecret").Value)
                        )
                   };
               });
